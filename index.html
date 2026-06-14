@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shivam VK | Food Science & Quality Professional</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0B0E1A;
+    --bg2: #0F1424;
+    --bg3: #141A2E;
+    --teal: #22D3EE;
+    --teal-dim: rgba(34,211,238,0.10);
+    --teal-glow: rgba(34,211,238,0.35);
+    --amber: #FB7185;
+    --amber-dim: rgba(251,113,133,0.10);
+    --violet: #A78BFA;
+    --slate: #94A3B8;
+    --text: #F1F5F9;
+    --text-dim: #64748B;
+    --card: rgba(255,255,255,0.035);
+    --card-border: rgba(255,255,255,0.09);
+    --grad-1: linear-gradient(135deg, #22D3EE 0%, #A78BFA 50%, #FB7185 100%);
+    --grad-2: linear-gradient(135deg, #A78BFA 0%, #22D3EE 100%);
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+
+  /* ── NOISE OVERLAY ── */
+  body::before {
+    content: '';
+    position: fixed; inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+    pointer-events: none; z-index: 0; opacity: 0.35;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0;
+    z-index: 1000;
+    background: rgba(11,14,26,0.8);
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--card-border);
+    padding: 0 2rem;
+    height: 60px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+
+  .nav-logo {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--teal);
+    letter-spacing: -0.02em;
+  }
+  .nav-logo span { color: var(--amber); }
+
+  .nav-links {
+    display: flex; gap: 1.5rem; list-style: none;
+  }
+
+  .nav-links a {
+    color: var(--slate);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--teal); }
+
+  .nav-cta {
+    background: var(--teal);
+    color: var(--bg) !important;
+    padding: 0.35rem 0.9rem;
+    border-radius: 4px;
+    font-weight: 600 !important;
+  }
+  .nav-cta:hover { background: #06b6d4; color: var(--bg) !important; }
+
+  /* ── HERO ── */
+  #hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    padding: 80px 2rem 2rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .hero-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    width: 100%;
+  }
+
+  .hero-eyebrow {
+    font-family: var(--font-mono);
+    font-size: 0.72rem;
+    color: var(--teal);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    width: 24px; height: 1px;
+    background: var(--teal);
+    display: inline-block;
+  }
+
+  .hero-name {
+    font-family: var(--font-display);
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+  }
+  .hero-name .accent {
+    background: var(--grad-1);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
+
+  .hero-title {
+    font-family: var(--font-display);
+    font-size: clamp(1rem, 2vw, 1.3rem);
+    font-weight: 400;
+    color: var(--slate);
+    margin-bottom: 1.5rem;
+    line-height: 1.4;
+  }
+
+  .hero-desc {
+    font-size: 0.95rem;
+    color: var(--slate);
+    max-width: 480px;
+    margin-bottom: 2rem;
+    line-height: 1.8;
+  }
+
+  .hero-btns {
+    display: flex; gap: 1rem; flex-wrap: wrap;
+  }
+
+  .btn-primary {
+    background: var(--teal);
+    color: var(--bg);
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+  }
+  .btn-primary:hover { background: #00bfb5; transform: translateY(-1px); }
+
+  .btn-outline {
+    border: 1px solid var(--card-border);
+    color: var(--text);
+    padding: 0.75rem 1.75rem;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.2s;
+    display: inline-flex; align-items: center; gap: 0.4rem;
+    background: var(--card);
+    backdrop-filter: blur(8px);
+  }
+  .btn-outline:hover { border-color: var(--teal); color: var(--teal); }
+
+  .hero-stats {
+    display: flex; gap: 2rem; margin-top: 2.5rem;
+  }
+  .stat-item {}
+  .stat-num {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--teal);
+    line-height: 1;
+  }
+  .stat-label {
+    font-size: 0.72rem;
+    color: var(--text-dim);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+  }
+
+  /* 3D MOLECULE ORB */
+  .hero-visual {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .orb-wrapper {
+    position: relative;
+    width: 380px;
+    height: 380px;
+  }
+
+  .orb-glow {
+    position: absolute;
+    inset: -40px;
+    background: radial-gradient(ellipse at center, var(--teal-glow) 0%, transparent 70%);
+    animation: pulse 4s ease-in-out infinite;
+    border-radius: 50%;
+  }
+
+  @keyframes pulse {
+    0%, 100% { opacity: 0.5; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.08); }
+  }
+
+  .orb-scene {
+    width: 380px;
+    height: 380px;
+    perspective: 800px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .orb-3d {
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    animation: rotate3d 18s linear infinite;
+    position: relative;
+  }
+
+  @keyframes rotate3d {
+    0%   { transform: rotateY(0deg) rotateX(15deg); }
+    100% { transform: rotateY(360deg) rotateX(15deg); }
+  }
+
+  .ring {
+    position: absolute;
+    top: 50%; left: 50%;
+    border-radius: 50%;
+    border: 1.5px solid;
+    transform-style: preserve-3d;
+  }
+
+  .ring-1 {
+    width: 280px; height: 280px;
+    margin: -140px 0 0 -140px;
+    border-color: rgba(34,211,238,0.5);
+    transform: rotateX(75deg);
+    animation: ring-spin1 6s linear infinite;
+  }
+  .ring-2 {
+    width: 220px; height: 220px;
+    margin: -110px 0 0 -110px;
+    border-color: rgba(251,113,133,0.45);
+    transform: rotateX(75deg) rotateZ(60deg);
+    animation: ring-spin2 9s linear infinite reverse;
+  }
+  .ring-3 {
+    width: 160px; height: 160px;
+    margin: -80px 0 0 -80px;
+    border-color: rgba(167,139,250,0.45);
+    transform: rotateX(75deg) rotateZ(120deg);
+    animation: ring-spin1 12s linear infinite;
+  }
+  .ring-4 {
+    width: 340px; height: 340px;
+    margin: -170px 0 0 -170px;
+    border-color: rgba(251,113,133,0.2);
+    transform: rotateX(20deg) rotateZ(45deg);
+    animation: ring-spin2 15s linear infinite;
+  }
+
+  @keyframes ring-spin1 { to { transform: rotateX(75deg) rotateZ(360deg); } }
+  @keyframes ring-spin2 { to { transform: rotateX(75deg) rotateZ(60deg) rotateY(360deg); } }
+
+  .orb-core {
+    position: absolute;
+    top: 50%; left: 50%;
+    width: 80px; height: 80px;
+    margin: -40px 0 0 -40px;
+    background: radial-gradient(circle at 35% 35%, #fff, var(--teal), #6D28D9);
+    border-radius: 50%;
+    box-shadow: 0 0 50px var(--teal-glow), 0 0 90px rgba(167,139,250,0.25), inset 0 0 20px rgba(255,255,255,0.15);
+  }
+
+  .node {
+    position: absolute;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 12px var(--teal);
+  }
+  .node-amber { background: var(--amber); box-shadow: 0 0 12px var(--amber); }
+
+  .orb-labels {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .floating-tag {
+    position: absolute;
+    font-family: var(--font-mono);
+    font-size: 0.62rem;
+    color: var(--teal);
+    letter-spacing: 0.08em;
+    background: rgba(34,211,238,0.08);
+    border: 1px solid rgba(34,211,238,0.2);
+    padding: 0.25rem 0.5rem;
+    border-radius: 3px;
+    white-space: nowrap;
+    animation: float 3s ease-in-out infinite;
+  }
+  .floating-tag.t1 { top: 8%; left: 60%; animation-delay: 0s; }
+  .floating-tag.t2 { top: 25%; left: 5%; animation-delay: 0.6s; color: var(--amber); border-color: rgba(251,113,133,0.25); background: rgba(251,113,133,0.08); }
+  .floating-tag.t3 { bottom: 20%; left: 8%; animation-delay: 1.2s; }
+  .floating-tag.t4 { bottom: 10%; right: 5%; animation-delay: 1.8s; color: var(--amber); border-color: rgba(251,113,133,0.25); background: rgba(251,113,133,0.08); }
+  .floating-tag.t5 { top: 55%; right: 2%; animation-delay: 0.9s; }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-6px); }
+  }
+
+  /* ── GRADIENT BG SHAPES ── */
+  .bg-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    pointer-events: none;
+    z-index: 0;
+  }
+  .blob-1 {
+    width: 400px; height: 400px;
+    background: radial-gradient(ellipse, rgba(34,211,238,0.08) 0%, transparent 70%);
+    top: 10%; right: 5%;
+  }
+  .blob-2 {
+    width: 500px; height: 500px;
+    background: radial-gradient(ellipse, rgba(251,113,133,0.05) 0%, transparent 70%);
+    bottom: -10%; left: -5%;
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 5rem 2rem;
+    position: relative;
+    z-index: 1;
+  }
+
+  .container {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  .section-label {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--teal);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+    display: flex; align-items: center; gap: 0.6rem;
+  }
+  .section-label::before {
+    content: '';
+    width: 20px; height: 1px;
+    background: var(--teal);
+  }
+
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.8rem, 3vw, 2.5rem);
+    font-weight: 700;
+    letter-spacing: -0.03em;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
+  }
+
+  .section-sub {
+    color: var(--slate);
+    font-size: 0.95rem;
+    max-width: 520px;
+    margin-bottom: 3rem;
+  }
+
+  /* ── EXPERTISE CARDS ── */
+  #expertise { background: var(--bg2); }
+
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 1rem;
+  }
+
+  .exp-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 1.5rem;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+  }
+  .exp-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--teal);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .exp-card:hover::before { transform: scaleX(1); }
+  .exp-card:hover {
+    background: rgba(34,211,238,0.05);
+    border-color: rgba(34,211,238,0.2);
+    transform: translateY(-3px);
+  }
+
+  .exp-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+  }
+  .exp-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+    color: var(--text);
+  }
+  .exp-desc {
+    font-size: 0.78rem;
+    color: var(--slate);
+    line-height: 1.6;
+  }
+
+  /* ── EXPERIENCE TIMELINE ── */
+  #experience { background: var(--bg); }
+
+  .timeline {
+    position: relative;
+    padding-left: 2rem;
+  }
+  .timeline::before {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 1px;
+    background: linear-gradient(to bottom, var(--teal), var(--amber), transparent);
+  }
+
+  .timeline-item {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-left: 2rem;
+  }
+  .timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -2.4rem;
+    top: 0.3rem;
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    background: var(--teal);
+    box-shadow: 0 0 12px var(--teal-glow);
+  }
+
+  .tl-date {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: var(--teal);
+    letter-spacing: 0.1em;
+    margin-bottom: 0.4rem;
+  }
+
+  .tl-role {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+  }
+
+  .tl-org {
+    font-size: 0.85rem;
+    color: var(--amber);
+    font-weight: 500;
+    margin-bottom: 1rem;
+  }
+
+  .tl-body {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1.25rem;
+  }
+
+  .tl-tags {
+    display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1rem;
+  }
+
+  .tag {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    padding: 0.2rem 0.5rem;
+    border-radius: 3px;
+    letter-spacing: 0.05em;
+  }
+  .tag-teal { background: var(--teal-dim); color: var(--teal); border: 1px solid rgba(34,211,238,0.2); }
+  .tag-amber { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(251,113,133,0.2); }
+
+  .resp-list {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.4rem;
+  }
+  .resp-list li {
+    font-size: 0.82rem;
+    color: var(--slate);
+    display: flex; align-items: flex-start; gap: 0.4rem;
+  }
+  .resp-list li::before {
+    content: '→';
+    color: var(--teal);
+    flex-shrink: 0;
+    margin-top: 0.05rem;
+  }
+
+  /* ── SKILLS ── */
+  #skills { background: var(--bg2); }
+
+  .skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .skill-block {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+
+  .skill-block-title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: var(--teal);
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.5rem;
+  }
+  .skill-block-title span { font-size: 1rem; }
+
+  .skill-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.7rem;
+  }
+  .skill-name { font-size: 0.82rem; color: var(--text); }
+  .skill-bar {
+    width: 140px;
+    height: 4px;
+    background: rgba(255,255,255,0.07);
+    border-radius: 2px;
+    overflow: hidden;
+  }
+  .skill-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: linear-gradient(90deg, var(--teal), rgba(34,211,238,0.5));
+    animation: barFill 1.5s ease-out both;
+  }
+  .skill-fill.amber {
+    background: linear-gradient(90deg, var(--amber), rgba(251,113,133,0.5));
+  }
+
+  @keyframes barFill {
+    from { width: 0 !important; }
+  }
+
+  /* ── PROJECTS ── */
+  #projects { background: var(--bg); }
+
+  .proj-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  .proj-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  .proj-card:hover { border-color: rgba(34,211,238,0.25); transform: translateY(-4px); }
+
+  .proj-header {
+    padding: 1.5rem;
+    background: linear-gradient(135deg, rgba(34,211,238,0.05) 0%, rgba(0,0,0,0) 100%);
+    border-bottom: 1px solid var(--card-border);
+  }
+
+  .proj-type {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    color: var(--amber);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+
+  .proj-name {
+    font-family: var(--font-display);
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text);
+  }
+
+  .proj-body { padding: 1.25rem; }
+  .proj-desc { font-size: 0.82rem; color: var(--slate); line-height: 1.7; margin-bottom: 1rem; }
+
+  /* ── CERTIFICATIONS ── */
+  #certifications { background: var(--bg2); }
+
+  .cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+  }
+
+  .cert-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1.25rem;
+    transition: all 0.25s;
+    text-align: center;
+  }
+  .cert-card:hover { border-color: rgba(34,211,238,0.2); background: rgba(34,211,238,0.04); }
+  .cert-icon { font-size: 1.6rem; margin-bottom: 0.6rem; }
+  .cert-name { font-size: 0.82rem; font-weight: 600; color: var(--text); margin-bottom: 0.3rem; }
+  .cert-org { font-size: 0.72rem; color: var(--teal); }
+
+  /* ── EDUCATION ── */
+  #education { background: var(--bg); }
+
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+  }
+
+  .edu-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 1.75rem;
+    position: relative;
+    overflow: hidden;
+  }
+  .edu-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0; right: 0;
+    width: 80px; height: 80px;
+    background: radial-gradient(ellipse at bottom right, var(--teal-dim), transparent);
+    border-radius: 50%;
+  }
+
+  .edu-degree {
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--amber);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 0.5rem;
+  }
+  .edu-title {
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    margin-bottom: 0.3rem;
+  }
+  .edu-inst {
+    font-size: 0.82rem;
+    color: var(--slate);
+    margin-bottom: 1rem;
+  }
+  .edu-points { list-style: none; }
+  .edu-points li {
+    font-size: 0.8rem;
+    color: var(--slate);
+    padding: 0.2rem 0;
+    display: flex; gap: 0.4rem; align-items: flex-start;
+  }
+  .edu-points li::before { content: '◆'; color: var(--teal); font-size: 0.5rem; margin-top: 0.3rem; flex-shrink: 0; }
+
+  /* ── INDUSTRIAL EXPOSURE ── */
+  #exposure { background: var(--bg2); }
+
+  .visit-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .visit-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    padding: 1rem;
+    text-align: center;
+    transition: all 0.25s;
+    cursor: default;
+  }
+  .visit-card:hover { border-color: var(--teal-dim); transform: scale(1.02); }
+  .visit-icon { font-size: 1.4rem; margin-bottom: 0.4rem; }
+  .visit-name { font-size: 0.75rem; font-weight: 600; color: var(--text); margin-bottom: 0.2rem; }
+  .visit-type { font-size: 0.65rem; color: var(--slate); }
+
+  /* ── TECH & CYBERSECURITY ── */
+  #tech { background: var(--bg); }
+
+  .tech-split {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 2rem;
+  }
+
+  .tech-card {
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 10px;
+    padding: 1.5rem;
+  }
+
+  .tech-card-title {
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--amber);
+    margin-bottom: 1rem;
+    display: flex; align-items: center; gap: 0.4rem;
+  }
+
+  .cyber-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.8rem;
+    color: var(--slate);
+  }
+  .cyber-dot {
+    width: 5px; height: 5px;
+    background: var(--teal);
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: 0.4rem;
+  }
+
+  .learning-path {
+    display: flex;
+    gap: 0.75rem;
+    margin-top: 1rem;
+  }
+  .lp-step {
+    flex: 1;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 0.75rem;
+    text-align: center;
+  }
+  .lp-label {
+    font-size: 0.62rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--teal);
+    margin-bottom: 0.4rem;
+    font-family: var(--font-mono);
+  }
+  .lp-items { font-size: 0.72rem; color: var(--slate); }
+
+  /* ── CONTACT ── */
+  #contact { background: var(--bg2); }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    align-items: start;
+  }
+
+  .contact-intro { font-size: 0.95rem; color: var(--slate); line-height: 1.8; margin-bottom: 1.5rem; }
+
+  .contact-links { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .contact-link {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.75rem 1rem;
+    background: var(--card);
+    border: 1px solid var(--card-border);
+    border-radius: 8px;
+    text-decoration: none;
+    color: var(--text);
+    font-size: 0.85rem;
+    transition: all 0.2s;
+  }
+  .contact-link:hover { border-color: rgba(34,211,238,0.25); color: var(--teal); }
+  .contact-link-icon { width: 32px; height: 32px; background: var(--teal-dim); border-radius: 6px; display: flex; align-items: center; justify-content: center; font-size: 0.9rem; }
+
+  .contact-form { background: var(--card); border: 1px solid var(--card-border); border-radius: 10px; padding: 1.75rem; }
+  .form-title { font-family: var(--font-display); font-weight: 600; margin-bottom: 1.25rem; }
+
+  .form-group { margin-bottom: 1rem; }
+  .form-label { font-size: 0.78rem; color: var(--slate); margin-bottom: 0.35rem; display: block; }
+  .form-input, .form-textarea {
+    width: 100%;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--card-border);
+    border-radius: 6px;
+    padding: 0.7rem 0.9rem;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    transition: border-color 0.2s;
+    outline: none;
+  }
+  .form-input:focus, .form-textarea:focus { border-color: rgba(34,211,238,0.4); }
+  .form-textarea { min-height: 100px; resize: vertical; }
+
+  /* ── FOOTER ── */
+  footer {
+    border-top: 1px solid var(--card-border);
+    padding: 2rem;
+    text-align: center;
+  }
+  .footer-text { font-size: 0.78rem; color: var(--text-dim); }
+  .footer-text a { color: var(--teal); text-decoration: none; }
+
+  /* ── SCROLL ANIMATIONS ── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--card-border), transparent);
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+
+  /* ── MOBILE ── */
+  @media (max-width: 768px) {
+    .nav-links { display: none; }
+    .hero-grid, .edu-grid, .tech-split, .contact-grid { grid-template-columns: 1fr; }
+    .orb-wrapper, .orb-scene { width: 260px; height: 260px; }
+    .floating-tag { display: none; }
+    .resp-list { grid-template-columns: 1fr; }
+    .hero-stats { gap: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">SVK<span>.</span></div>
+  <ul class="nav-links">
+    <li><a href="#expertise">Expertise</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#tech">Tech & Cyber</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section id="hero">
+  <div class="bg-blob blob-1"></div>
+  <div class="bg-blob blob-2"></div>
+
+  <div class="hero-grid">
+    <div class="hero-content reveal">
+      <div class="hero-eyebrow">Food Science & Quality Professional</div>
+      <h1 class="hero-name">Shivam <span class="accent">VK</span></h1>
+      <p class="hero-title">Quality Executive · M.Sc. Food Science & Technology<br>Agriculture Graduate · Food Safety Specialist</p>
+      <p class="hero-desc">Bridging agri-food science, quality management, and technology — from farm-level agronomy to industrial HACCP systems and new product development.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">↗ Get In Touch</a>
+        <a href="#experience" class="btn-outline">View Experience</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat-item">
+          <div class="stat-num">M.Sc.</div>
+          <div class="stat-label">Food Science & Tech</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">B.Sc.</div>
+          <div class="stat-label">Agriculture (Hons.)</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">20+</div>
+          <div class="stat-label">Certifications</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num">2+</div>
+          <div class="stat-label">Industry Roles</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3D ORB -->
+    <div class="hero-visual reveal">
+      <div class="orb-wrapper">
+        <div class="orb-glow"></div>
+        <div class="orb-scene">
+          <div class="orb-3d">
+            <div class="ring ring-1"></div>
+            <div class="ring ring-2"></div>
+            <div class="ring ring-3"></div>
+            <div class="ring ring-4"></div>
+            <div class="orb-core"></div>
+          </div>
+        </div>
+        <div class="orb-labels">
+          <span class="floating-tag t1">HACCP</span>
+          <span class="floating-tag t2">NPD</span>
+          <span class="floating-tag t3">ISO 22000</span>
+          <span class="floating-tag t4">Dairy Tech</span>
+          <span class="floating-tag t5">GMP/GHP</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- EXPERTISE -->
+<section id="expertise">
+  <div class="container">
+    <div class="section-label">Core Domains</div>
+    <h2 class="section-title">Areas of Expertise</h2>
+    <p class="section-sub">Multidisciplinary competency spanning food science, quality systems, agronomy, and technology.</p>
+
+    <div class="cards-grid">
+      <div class="exp-card reveal">
+        <div class="exp-icon">🔬</div>
+        <div class="exp-title">Food Quality Control</div>
+        <div class="exp-desc">Incoming material inspection, in-process monitoring, oil quality testing (FFA, PV, TPC), physicochemical analysis.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">🛡️</div>
+        <div class="exp-title">Food Safety Management</div>
+        <div class="exp-desc">HACCP implementation, GMP/GHP compliance, FSSAI standards, CCP & OPRP monitoring, FSMS documentation.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">🧪</div>
+        <div class="exp-title">Laboratory Analysis</div>
+        <div class="exp-desc">Soxhlet extraction, Garber method, moisture/ash/bulk density analysis, chemical & microbiological testing protocols.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">🌾</div>
+        <div class="exp-title">Agricultural Science</div>
+        <div class="exp-desc">Agronomy, horticulture, soil science, plant protection, hydroponics, regenerative agriculture, RAWE exposure.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">🧑‍🔬</div>
+        <div class="exp-title">New Product Development</div>
+        <div class="exp-desc">Formulation design, sensory evaluation parameters, commercial feasibility assessment. Dal Makhani + Makhana NPD project.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">📋</div>
+        <div class="exp-title">QA Documentation</div>
+        <div class="exp-desc">SOPs, audit checklists, non-conformance reports, calibration records, traceability systems, internal audit management.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">🏭</div>
+        <div class="exp-title">Process Monitoring</div>
+        <div class="exp-desc">Large-scale centralized kitchen operations, fryer monitoring, in-process sampling, critical limit management.</div>
+      </div>
+      <div class="exp-card reveal">
+        <div class="exp-icon">💻</div>
+        <div class="exp-title">Data & Automation</div>
+        <div class="exp-desc">MS Excel, Google Sheets, Apps Script, automated reporting, form-based data collection, dashboard management.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="container">
+    <div class="section-label">Professional Journey</div>
+    <h2 class="section-title">Work Experience</h2>
+    <p class="section-sub">Hands-on quality assurance across large-scale food production and industrial manufacturing environments.</p>
+
+    <div class="timeline">
+      <!-- AKshaya Patra -->
+      <div class="timeline-item reveal">
+        <div class="tl-date">2024 – Present</div>
+        <div class="tl-role">Quality Executive</div>
+        <div class="tl-org">Akshaya Patra Foundation — Centralized Kitchen, Kanpur</div>
+        <div class="tl-body">
+          <ul class="resp-list">
+            <li>Incoming raw material inspection</li>
+            <li>CCP & OPRP monitoring</li>
+            <li>In-process quality checks</li>
+            <li>Internal quality audits</li>
+            <li>FSMS documentation review</li>
+            <li>Calibration management</li>
+            <li>Training compliance tracking</li>
+            <li>QCD/CTSS data analysis</li>
+            <li>Supplier quality coordination</li>
+            <li>Non-conformance management</li>
+          </ul>
+          <div class="tl-tags">
+            <span class="tag tag-teal">HACCP</span>
+            <span class="tag tag-teal">ISO 22000</span>
+            <span class="tag tag-teal">FSSAI</span>
+            <span class="tag tag-teal">GMP</span>
+            <span class="tag tag-teal">GHP</span>
+            <span class="tag tag-amber">MDM Programme</span>
+            <span class="tag tag-amber">Large-Scale Operations</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mahesh Namkeen -->
+      <div class="timeline-item reveal">
+        <div class="tl-date">Internship Period</div>
+        <div class="tl-role">Quality Control Intern</div>
+        <div class="tl-org">Mahesh Namkeen Pvt. Ltd.</div>
+        <div class="tl-body">
+          <ul class="resp-list">
+            <li>Raw material QC – besan, atta, spices</li>
+            <li>Oil quality testing (FFA, TPC, PV)</li>
+            <li>Fryer & bhatti hall monitoring</li>
+            <li>Packaging defect analysis</li>
+            <li>Leakage & GSM testing</li>
+            <li>Soxhlet fat extraction</li>
+            <li>Garber centrifuge operation</li>
+            <li>In-process sample collection</li>
+            <li>Laminate pouch inspection</li>
+            <li>Chips & namkeen QC</li>
+          </ul>
+          <div class="tl-tags">
+            <span class="tag tag-teal">Oil Analysis</span>
+            <span class="tag tag-teal">Packaging QC</span>
+            <span class="tag tag-amber">Snack Food Manufacturing</span>
+            <span class="tag tag-amber">Industrial Lab</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="container">
+    <div class="section-label">Technical Proficiency</div>
+    <h2 class="section-title">Skills & Competencies</h2>
+    <p class="section-sub">Scientific rigor meets practical food industry application across analytical, safety, and agricultural domains.</p>
+
+    <div class="skills-grid">
+      <div class="skill-block reveal">
+        <div class="skill-block-title"><span>🧪</span> Food Quality Analysis</div>
+        <div class="skill-item"><span class="skill-name">Oil Quality (FFA/PV/TPC)</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Moisture & Ash Analysis</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Salt & Bulk Density</span><div class="skill-bar"><div class="skill-fill" style="width:82%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Soxhlet Extraction</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Garber Method</span><div class="skill-bar"><div class="skill-fill" style="width:78%"></div></div></div>
+      </div>
+
+      <div class="skill-block reveal">
+        <div class="skill-block-title"><span>🛡️</span> Food Safety Systems</div>
+        <div class="skill-item"><span class="skill-name">HACCP Principles</span><div class="skill-bar"><div class="skill-fill" style="width:90%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">GMP / GHP</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">FSSAI Compliance</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Risk Assessment</span><div class="skill-bar"><div class="skill-fill" style="width:80%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Root Cause Analysis</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+      </div>
+
+      <div class="skill-block reveal">
+        <div class="skill-block-title"><span>🌾</span> Agriculture & Agri-Science</div>
+        <div class="skill-item"><span class="skill-name">Crop Production & Agronomy</span><div class="skill-bar"><div class="skill-fill amber" style="width:85%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Horticulture & Soil Science</span><div class="skill-bar"><div class="skill-fill amber" style="width:82%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Plant Protection</span><div class="skill-bar"><div class="skill-fill amber" style="width:78%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Hydroponics</span><div class="skill-bar"><div class="skill-fill amber" style="width:70%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Regenerative Agriculture</span><div class="skill-bar"><div class="skill-fill amber" style="width:65%"></div></div></div>
+      </div>
+
+      <div class="skill-block reveal">
+        <div class="skill-block-title"><span>💻</span> Digital & Data Tools</div>
+        <div class="skill-item"><span class="skill-name">MS Excel (Advanced)</span><div class="skill-bar"><div class="skill-fill" style="width:88%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Google Sheets & Forms</span><div class="skill-bar"><div class="skill-fill" style="width:85%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Google Apps Script</span><div class="skill-bar"><div class="skill-fill" style="width:72%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">Website Management</span><div class="skill-bar"><div class="skill-fill" style="width:68%"></div></div></div>
+        <div class="skill-item"><span class="skill-name">AI Tools & Automation</span><div class="skill-bar"><div class="skill-fill" style="width:75%"></div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <div class="container">
+    <div class="section-label">Research & Development</div>
+    <h2 class="section-title">Projects</h2>
+    <p class="section-sub">Academic research, product development, and applied technology projects.</p>
+
+    <div class="proj-grid">
+      <div class="proj-card reveal">
+        <div class="proj-header">
+          <div class="proj-type">💻 Technology — Automation</div>
+          <div class="proj-name">School Management System (Excel)</div>
+        </div>
+        <div class="proj-body">
+          <p class="proj-desc">Engineered a comprehensive multi-module spreadsheet platform for Vidhya Bharti Institute using openpyxl — encompassing student records, fee collection, automated receipts, marksheets, ID cards, and admission certificates within an integrated workflow.</p>
+          <div class="tl-tags">
+            <span class="tag tag-teal">Python</span>
+            <span class="tag tag-teal">openpyxl</span>
+            <span class="tag tag-amber">Excel Automation</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="proj-card reveal">
+        <div class="proj-header">
+          <div class="proj-type">📊 Data Management</div>
+          <div class="proj-name">Student Result Management System</div>
+        </div>
+        <div class="proj-body">
+          <p class="proj-desc">Google Apps Script–based result and attendance management system for a coaching institute. Features automated reporting, student records dashboard, search functionality, and form-based data entry.</p>
+          <div class="tl-tags">
+            <span class="tag tag-teal">Apps Script</span>
+            <span class="tag tag-teal">Google Sheets</span>
+            <span class="tag tag-amber">Automation</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+  <div class="container">
+    <div class="section-label">Credentials</div>
+    <h2 class="section-title">Certifications & Training</h2>
+    <p class="section-sub">Formal credentials in food safety, processing technology, agriculture, and information technology.</p>
+
+    <div class="cert-grid">
+      <div class="cert-card reveal">
+        <div class="cert-icon">🛡️</div>
+        <div class="cert-name">FoSTaC Certification</div>
+        <div class="cert-org">FSSAI</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">🥐</div>
+        <div class="cert-name">Bakery & Confectionery</div>
+        <div class="cert-org">Processing Tech</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">🥦</div>
+        <div class="cert-name">Fruit & Vegetable Processing</div>
+        <div class="cert-org">Food Technology</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">🌿</div>
+        <div class="cert-name">Hydroponics & Soilless Culture</div>
+        <div class="cert-org">Agriculture</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">🌾</div>
+        <div class="cert-name">Basmati Rice Production</div>
+        <div class="cert-org">Agricultural Science</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">♻️</div>
+        <div class="cert-name">Regenerative Agriculture</div>
+        <div class="cert-org">Sustainable Farming</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">🔬</div>
+        <div class="cert-name">Basic Lab Analysis</div>
+        <div class="cert-org">Chemical & Micro</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">💻</div>
+        <div class="cert-name">ADCA Certification</div>
+        <div class="cert-org">Computer Applications</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">🔐</div>
+        <div class="cert-name">Cybersecurity Certificate</div>
+        <div class="cert-org">Digital Security Fundamentals</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">📊</div>
+        <div class="cert-name">Quality Management Systems</div>
+        <div class="cert-org">ISO Standards</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">🧫</div>
+        <div class="cert-name">Food Microbiology</div>
+        <div class="cert-org">Laboratory Techniques</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">📦</div>
+        <div class="cert-name">Packaging Technology</div>
+        <div class="cert-org">Food Packaging Systems</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">🐄</div>
+        <div class="cert-name">Dairy Technology</div>
+        <div class="cert-org">Processing & QC</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">⚗️</div>
+        <div class="cert-name">Food Chemistry Essentials</div>
+        <div class="cert-org">Applied Food Science</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">🌱</div>
+        <div class="cert-name">Sustainable Crop Management</div>
+        <div class="cert-org">Agricultural Practices</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">📈</div>
+        <div class="cert-name">Data Analysis with Spreadsheets</div>
+        <div class="cert-org">Digital Productivity</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">🧠</div>
+        <div class="cert-name">AI Tools for Productivity</div>
+        <div class="cert-org">Applied AI</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">🔍</div>
+        <div class="cert-name">Internal Audit Techniques</div>
+        <div class="cert-org">Quality Assurance</div>
+      </div>
+      <div class="cert-card reveal">
+        <div class="cert-icon">📜</div>
+        <div class="cert-name">Food Laws & Regulations</div>
+        <div class="cert-org">Regulatory Compliance</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- EDUCATION -->
+<section id="education">
+  <div class="container">
+    <div class="section-label">Academic Background</div>
+    <h2 class="section-title">Education</h2>
+    <p class="section-sub">Strong agri-food science foundation from undergraduate agronomy through postgraduate dairy & food technology specialization.</p>
+
+    <div class="edu-grid">
+      <div class="edu-card reveal">
+        <div class="edu-degree">Master of Science</div>
+        <div class="edu-title">Food Science & Technology</div>
+        <div class="edu-inst">Specialization: Dairy Technology</div>
+        <ul class="edu-points">
+          <li>Food Chemistry & Biochemistry</li>
+          <li>Food Microbiology & Safety</li>
+          <li>Dairy Processing Technology</li>
+          <li>Quality Control & Management</li>
+          <li>Food Laws & Regulations</li>
+          <li>NPD & Sensory Evaluation</li>
+          <li>Research Project: Peanut Milk Curd</li>
+        </ul>
+        <div class="tl-tags" style="margin-top:1rem">
+          <span class="tag tag-teal">M.Sc. Degree</span>
+          <span class="tag tag-amber">Dairy Technology</span>
+        </div>
+      </div>
+
+      <div class="edu-card reveal">
+        <div class="edu-degree">Bachelor of Science (Hons.)</div>
+        <div class="edu-title">Agriculture</div>
+        <div class="edu-inst">Comprehensive agricultural science program</div>
+        <ul class="edu-points">
+          <li>Agronomy & Crop Production</li>
+          <li>Horticulture & Floriculture</li>
+          <li>Soil Science & Fertility</li>
+          <li>Plant Protection & Pathology</li>
+          <li>RAWE Program (field training)</li>
+          <li>NSS — Community Service</li>
+          <li>ICAR, CSIR-CIMAP, KVK Visits</li>
+          <li>G.B. Pant University exposure</li>
+        </ul>
+        <div class="tl-tags" style="margin-top:1rem">
+          <span class="tag tag-teal">B.Sc. (Hons.)</span>
+          <span class="tag tag-amber">RAWE Program</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- INDUSTRIAL EXPOSURE -->
+<section id="exposure">
+  <div class="container">
+    <div class="section-label">Field Experience</div>
+    <h2 class="section-title">Industrial & Research Exposure</h2>
+    <p class="section-sub">Visits to premier research institutions and food industry facilities for applied learning.</p>
+
+    <div class="section-label" style="margin-bottom:0.75rem; margin-top:0">Research & Academic Institutions</div>
+    <div class="visit-grid" style="margin-bottom:2rem">
+      <div class="visit-card reveal">
+        <div class="visit-icon">🏛️</div>
+        <div class="visit-name">NIFTEM</div>
+        <div class="visit-type">Food Technology</div>
+      </div>
+      <div class="visit-card reveal">
+        <div class="visit-icon">🔬</div>
+        <div class="visit-name">CFTRI</div>
+        <div class="visit-type">Food Research</div>
+      </div>
+      <div class="visit-card reveal">
+        <div class="visit-icon">🌾</div>
+        <div class="visit-name">ICAR-IISR</div>
+        <div class="visit-type">Sugarcane Research</div>
+      </div>
+      <div class="visit-card reveal">
+        <div class="visit-icon">🪴</div>
+        <div class="visit-name">CISH</div>
+        <div class="visit-type">Subtropical Horticulture</div>
+      </div>
+      <div class="visit-card reveal">
+        <div class="visit-icon">🌿</div>
+        <div class="visit-name">CSIR-CIMAP</div>
+        <div class="visit-type">Aromatic Plants</div>
+      </div>
+      <div class="visit-card reveal">
+        <div class="visit-icon">🎓</div>
+        <div class="visit-name">G.B. Pant University</div>
+        <div class="visit-type">Agri University</div>
+      </div>
+    </div>
+
+    <div class="section-label" style="margin-bottom:0.75rem">Industry Facilities</div>
+    <div class="visit-grid">
+      <div class="visit-card reveal">
+        <div class="visit-icon">🥛</div>
+        <div class="visit-name">Gyan Dairy</div>
+        <div class="visit-type">Dairy Processing</div>
+      </div>
+      <div class="visit-card reveal">
+        <div class="visit-icon">❄️</div>
+        <div class="visit-name">Ambrosia Frozen Foods</div>
+        <div class="visit-type">Frozen Processing</div>
+      </div>
+      <div class="visit-card reveal">
+        <div class="visit-icon">🫛</div>
+        <div class="visit-name">Frozen Pea Processing</div>
+        <div class="visit-type">Vegetable Processing</div>
+      </div>
+      <div class="visit-card reveal">
+        <div class="visit-icon">🛢️</div>
+        <div class="visit-name">Rice Bran Oil Plant</div>
+        <div class="visit-type">Oil Processing</div>
+      </div>
+      <div class="visit-card reveal">
+        <div class="visit-icon">🍯</div>
+        <div class="visit-name">Honey Processing Unit</div>
+        <div class="visit-type">Apiculture Products</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- TECH & CYBERSECURITY -->
+<section id="tech">
+  <div class="container">
+    <div class="section-label">Technology & Digital</div>
+    <h2 class="section-title">Technology & Cybersecurity</h2>
+    <p class="section-sub">Additional expertise as a food science professional with strong technology interests — automation, digital security awareness, and AI tools.</p>
+
+    <div class="tech-split">
+      <div class="tech-card reveal">
+        <div class="tech-card-title">🔐 Cybersecurity Interests</div>
+        <div class="cyber-item"><div class="cyber-dot"></div>CIA Triad & Information Security Fundamentals</div>
+        <div class="cyber-item"><div class="cyber-dot"></div>Network Security — TCP/IP, DNS, VPN, Firewalls</div>
+        <div class="cyber-item"><div class="cyber-dot"></div>Mobile Security & Device Hardening</div>
+        <div class="cyber-item"><div class="cyber-dot"></div>OSINT — Open Source Intelligence Basics</div>
+        <div class="cyber-item"><div class="cyber-dot"></div>Digital Privacy & Secure Computing</div>
+        <div class="cyber-item"><div class="cyber-dot"></div>Web Security Concepts (SSL/TLS, Authentication)</div>
+        <div class="cyber-item"><div class="cyber-dot"></div>Android Security & App Permissions Analysis</div>
+      </div>
+
+      <div class="tech-card reveal">
+        <div class="tech-card-title">🤖 AI & Automation</div>
+        <div class="cyber-item"><div class="cyber-dot"></div>ChatGPT, Claude, Gemini — AI productivity tools</div>
+        <div class="cyber-item"><div class="cyber-dot"></div>Google Workspace automation via Apps Script</div>
+        <div class="cyber-item"><div class="cyber-dot"></div>Automated data processing & reporting pipelines</div>
+        <div class="cyber-item"><div class="cyber-dot"></div>Form & spreadsheet automation</div>
+        <div class="cyber-item"><div class="cyber-dot"></div>Telegram bot deployment (Render.com)</div>
+        <div class="cyber-item"><div class="cyber-dot"></div>AI content generation for digital projects</div>
+        <div class="cyber-item"><div class="cyber-dot"></div>Digital marketing & SEO fundamentals</div>
+      </div>
+    </div>
+
+    <div class="tech-card reveal" style="margin-bottom:1.5rem">
+      <div class="tech-card-title">📈 Cybersecurity Learning Roadmap</div>
+      <p style="font-size:0.82rem; color:var(--slate); margin-bottom:1rem;">Active self-study path toward formal cybersecurity credentials:</p>
+      <div class="learning-path">
+        <div class="lp-step">
+          <div class="lp-label">Beginner</div>
+          <div class="lp-items">Networking Basics<br>OS Fundamentals<br>Security Concepts</div>
+        </div>
+        <div class="lp-step">
+          <div class="lp-label">Intermediate</div>
+          <div class="lp-items">Web Security<br>Cloud Security<br>Linux Admin</div>
+        </div>
+        <div class="lp-step">
+          <div class="lp-label">Advanced</div>
+          <div class="lp-items">SOC Operations<br>Threat Intelligence<br>Incident Response</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="tech-card reveal">
+      <div class="tech-card-title">🎯 Target Certifications (Future)</div>
+      <div style="display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.25rem">
+        <span class="tag tag-teal">Google Cybersecurity Certificate</span>
+        <span class="tag tag-teal">CompTIA Security+</span>
+        <span class="tag tag-teal">ISC2 CC</span>
+        <span class="tag tag-teal">CEH</span>
+        <span class="tag tag-teal">Microsoft Security Fundamentals</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-label">Let's Connect</div>
+    <h2 class="section-title">Get In Touch</h2>
+
+    <div class="contact-grid">
+      <div>
+        <p class="contact-intro">Open to opportunities in Quality Assurance, Food Safety, R&D / NPD, FSMS consulting, and agri-food industry roles. Also available for technology collaboration and knowledge exchange.</p>
+
+        <div class="contact-links">
+          <a href="mailto: vkshivam13@gmail.com" class="contact-link">
+            <div class="contact-link-icon">✉️</div>
+            <div><strong>Email</strong><br><span style="color:var(--slate);font-size:0.8rem">vkshivam13@gmail.com</span></div>
+          </a>
+          <a href="https://linkedin.com" class="contact-link" target="_blank">
+            <div class="contact-link-icon">💼</div>
+            <div><strong>LinkedIn</strong><br><span style="color:var(--slate);font-size:0.8rem">linkedin.com/in/shivam-vk</span></div>
+          </a>
+          <a href="#" class="contact-link">
+            <div class="contact-link-icon">📍</div>
+            <div><strong>Location</strong><br><span style="color:var(--slate);font-size:0.8rem">Lucknow / Kanpur, Uttar Pradesh</span></div>
+          </a>
+          <a href="#" class="contact-link" onclick="window.print()">
+            <div class="contact-link-icon">📄</div>
+            <div><strong>Resume</strong><br><span style="color:var(--slate);font-size:0.8rem">Download PDF</span></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="contact-form reveal">
+        <div class="form-title">Send a Message</div>
+        <div class="form-group">
+          <label class="form-label">Your Name</label>
+          <input class="form-input" type="text" placeholder="Full Name">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input class="form-input" type="email" placeholder="vkshivam13@gmail.com">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Subject</label>
+          <input class="form-input" type="text" placeholder="e.g. Job Opportunity, Collaboration">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Message</label>
+          <textarea class="form-textarea" placeholder="Your message here..."></textarea>
+        </div>
+        <button class="btn-primary" style="width:100%;justify-content:center" onclick="alert('Form submitted! (Connect to a backend like Formspree for actual emails.)')">Send Message →</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p class="footer-text">© 2026 Shivam VK · Food Science & Quality Professional · Built for GitHub Pages ·</p>
+</footer>
+
+<script>
+  // Scroll reveal
+  const reveals = document.querySelectorAll('.reveal');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => entry.target.classList.add('visible'), i * 60);
+      }
+    });
+  }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+  reveals.forEach(el => observer.observe(el));
+
+  // Skill bar animation on scroll
+  const skillBars = document.querySelectorAll('.skill-fill');
+  const barObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.style.animationPlayState = 'running';
+      }
+    });
+  }, { threshold: 0.3 });
+  skillBars.forEach(bar => {
+    bar.style.animationPlayState = 'paused';
+    barObserver.observe(bar);
+  });
+
+  // Active nav highlight
+  const sections = document.querySelectorAll('section[id]');
+  const navLinks = document.querySelectorAll('.nav-links a');
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(section => {
+      if (window.scrollY >= section.offsetTop - 100) current = section.getAttribute('id');
+    });
+    navLinks.forEach(link => {
+      link.style.color = link.getAttribute('href') === '#' + current ? 'var(--teal)' : '';
+    });
+  });
+</script>
+
+</body>
+</html>
